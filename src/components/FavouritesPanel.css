@@ -1,0 +1,66 @@
+.fav{
+  position: sticky;
+  top: 72px;
+  align-self: start;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+  background: rgba(15,27,51,.7);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: none;
+  min-height: 420px;
+}
+
+.fav__drop{
+  border: 1px dashed rgba(255,255,255,.25);
+  border-radius: 14px;
+  padding: 10px;
+  background: rgba(255,255,255,.03);
+}
+
+.fav__drop--add{
+  border-color: rgba(14,167,106,.45);
+}
+.fav__title{ font-weight: 900; }
+.fav__hint{ color: #b8c3de; font-size: 12px; margin-top: 2px; }
+
+.fav__list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.fav__empty{ color: #b8c3de; font-size: 13px; padding: 6px 2px; }
+
+.fav__item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  padding: 8px;
+  background: rgba(19,33,68,.6);
+}
+.fav__thumb{ width: 44px; height: 44px; border-radius: 12px; object-fit: cover; background: rgba(255,255,255,.04); }
+.fav__meta{ flex:1; min-width: 0; }
+.fav__link{ text-decoration:none; font-weight: 800; display:block; white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
+.fav__link:hover{ text-decoration: underline; }
+.fav__small{ color: #b8c3de; font-size: 12px; margin-top: 2px; }
+
+.fav__del{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.18);
+  color: #e8eefc;
+  border-radius: 12px;
+  width: 34px; height: 34px;
+  cursor:pointer;
+}
+
+.fav__drop--remove{
+  border-color: rgba(255,91,91,.45);
+  text-align:center;
+}
+.fav__trash{ color: rgba(255,255,255,.85); font-size: 13px; }
+
+.fav__clear{ width:100%; }
+
+@media (max-width: 1024px){
+  .fav{ position: static; min-height: auto; }
+}

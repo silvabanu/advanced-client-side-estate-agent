@@ -1,4 +1,4 @@
-import React, { useId, useState } from "react";
+import { useId, useState } from "react";
 import "./Tabs.css";
 
 export default function Tabs({ tabs }) {

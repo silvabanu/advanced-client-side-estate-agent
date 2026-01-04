@@ -1,5 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { Star } from "lucide-react";
 import { sanitizeText } from "../utils/sanitize";
 import "./PropertyCard.css";
 
@@ -24,11 +24,16 @@ export default function PropertyCard({ property, onDragStart, favourites = NO_FA
       <img className="card__img" src={`/${property.picture}`} alt={`${property.type} preview`} />
       <div className="card__body">
         <div className="card__top">
-          <h3 className="card__title">{property.type} • {property.bedrooms} bed</h3>
+          <h3 className="card__title">
+            {property.type} <Star size={12} /> {property.bedrooms} bed
+          </h3>
           <div className="card__price">£{Number(property.price).toLocaleString()}</div>
         </div>
         <div className="card__loc">{property.location}</div>
-        <p className="card__desc">{sanitizeText(property.description).slice(0, 140)}{sanitizeText(property.description).length > 140 ? "…" : ""}</p>
+        <p className="card__desc">
+          {sanitizeText(property.description).slice(0, 140)}
+          {sanitizeText(property.description).length > 140 ? "…" : ""}
+        </p>
 
         <div className="card__actions">
           <Link className="btn" to={`/property/${property.id}`}>View details</Link>
@@ -39,7 +44,8 @@ export default function PropertyCard({ property, onDragStart, favourites = NO_FA
             title={isFav ? "Remove from favourites" : "Add to favourites"}
             type="button"
           >
-            {isFav ? "★ Favourited" : "☆ Favourite"}
+            <Star size={16} fill={isFav ? "currentColor" : "none"} stroke="currentColor" />
+            {isFav ? " Favourited" : " Favourite"}
           </button>
         </div>
       </div>

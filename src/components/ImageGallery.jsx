@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
 import "./ImageGallery.css";
 
 export default function ImageGallery({ propertyId }) {
@@ -13,7 +14,12 @@ export default function ImageGallery({ propertyId }) {
 
   return (
     <div className="gal">
-      <button className="gal__main" type="button" onClick={() => setIsOpen(true)} aria-label="Open image viewer">
+      <button
+        className="gal__main"
+        type="button"
+        onClick={() => setIsOpen(true)}
+        aria-label="Open image viewer"
+      >
         <img src={active} alt="Property large view" />
         <span className="gal__zoom">View all</span>
       </button>
@@ -33,10 +39,25 @@ export default function ImageGallery({ propertyId }) {
 
       {isOpen && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-          <button className="lightbox__close" type="button" onClick={() => setIsOpen(false)} aria-label="Close">✕</button>
+          <button
+            className="lightbox__close"
+            type="button"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close"
+          >
+            <X size={24} />
+          </button>
           <div className="lightbox__grid">
             {images.map((src) => (
-              <button key={src} className="lightbox__item" type="button" onClick={() => { setActive(src); setIsOpen(false); }}>
+              <button
+                key={src}
+                className="lightbox__item"
+                type="button"
+                onClick={() => {
+                  setActive(src);
+                  setIsOpen(false);
+                }}
+              >
                 <img src={src} alt="Property image" />
               </button>
             ))}

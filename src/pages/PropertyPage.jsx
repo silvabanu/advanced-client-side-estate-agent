@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { Star, Circle } from "lucide-react";
 import propertiesData from "../data/properties.json";
 import ImageGallery from "../components/ImageGallery";
 import Tabs from "../components/Tabs";
@@ -21,7 +22,7 @@ export default function PropertyPage({ favourites = NO_FAVOURITES }) {
   if (!property) {
     return (
       <main className="page">
-        <div className="page__inner">
+        <div className="property_page__inner">
           <section className="panel">
             <h1 className="h1">Property not found</h1>
             <Link className="btn" to="/search">Back to search</Link>
@@ -74,15 +75,17 @@ export default function PropertyPage({ favourites = NO_FAVOURITES }) {
 
   return (
     <main className="page">
-      <div className="page__inner">
+      <div className="property_page__inner">
         <section className="panel">
           <div className="propHead">
             <div>
               <Link className="link" to="/search">← Back to search</Link>
-              <h1 className="h1">{property.type} • {property.bedrooms} bed</h1>
+              <h1 className="h1">
+                {property.type} <Circle size={10} /> {property.bedrooms} bed
+              </h1>
               <div className="propMeta">
                 <span className="price">£{Number(property.price).toLocaleString()}</span>
-                <span className="dot">•</span>
+                <Circle size={6} className="dot" />
                 <span className="loc">{property.location}</span>
               </div>
             </div>
@@ -93,7 +96,13 @@ export default function PropertyPage({ favourites = NO_FAVOURITES }) {
               type="button"
               aria-pressed={isFav}
             >
-              {isFav ? "★ In favourites" : "☆ Add to favourites"}
+              <Star
+                size={16}
+                fill={isFav ? "currentColor" : "none"}
+                stroke="currentColor"
+                style={{ marginRight: 4 }}
+              />
+              {isFav ? "In favourites" : "Add to favourites"}
             </button>
           </div>
 

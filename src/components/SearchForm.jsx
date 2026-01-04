@@ -1,7 +1,7 @@
-import React from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 import Slider from "rc-slider";
+import { Circle } from "lucide-react"; 
 import "react-datepicker/dist/react-datepicker.css";
 import "rc-slider/assets/index.css";
 import "./SearchForm.css";
@@ -62,7 +62,7 @@ export default function SearchForm({
           <label className="sf__label">Price range (£)</label>
           <div className="sf__range">
             <div className="sf__rangeText">
-              Min: <b>{criteria.minPrice ?? priceMin}</b> • Max: <b>{criteria.maxPrice ?? priceMax}</b>
+              Min: <b>{criteria.minPrice ?? priceMin}</b> <Circle size={8} /> Max: <b>{criteria.maxPrice ?? priceMax}</b>
             </div>
             <Slider
               range
@@ -81,7 +81,7 @@ export default function SearchForm({
           <label className="sf__label">Bedrooms</label>
           <div className="sf__range">
             <div className="sf__rangeText">
-              Min: <b>{criteria.minBeds ?? bedMin}</b> • Max: <b>{criteria.maxBeds ?? bedMax}</b>
+              Min: <b>{criteria.minBeds ?? bedMin}</b> <Circle size={8} /> Max: <b>{criteria.maxBeds ?? bedMax}</b>
             </div>
             <Slider
               range

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import propertiesData from "../data/properties.json";
 import SearchForm from "../components/SearchForm";
 import PropertyCard from "../components/PropertyCard";

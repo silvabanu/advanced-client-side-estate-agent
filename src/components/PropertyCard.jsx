@@ -21,7 +21,11 @@ export default function PropertyCard({ property, onDragStart, favourites = NO_FA
       onDragStart={(e) => onDragStart?.(e, property.id)}
       aria-label={`Property ${property.id}`}
     >
-      <img className="card__img" src={`/${property.picture}`} alt={`${property.type} preview`} />
+      <img
+        className="card__img"
+        src={`${import.meta.env.BASE_URL}${property.picture}`}
+        alt={`${property.type} preview`}
+      />
       <div className="card__body">
         <div className="card__top">
           <h3 className="card__title">

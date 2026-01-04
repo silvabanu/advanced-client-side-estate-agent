@@ -1,66 +1,156 @@
+/* ============================= */
+/* Favorite panel container */
+/* ============================= */
 .fav{
-  position: sticky;
-  top: 72px;
-  align-self: start;
-  display:flex;
-  flex-direction:column;
-  gap: 10px;
-  background: #ffffff;
-  border: 1px solid #e2e8f5;
-  border-radius: 16px;
-  padding: 12px;
-  box-shadow: 0 12px 30px rgba(15,33,82,.08);
-  min-height: 420px;
+  position: sticky;           /* Sticks to top while scrolling */
+  top: 72px;                  /* Distance from top */
+  align-self: start;          /* Aligns to top in flex/grid */
+  display:flex;               /* Flex layout */
+  flex-direction:column;      /* Stack items vertically */
+  gap: 10px;                  /* Space between items */
+  background: #ffffff;        /* White background */
+  border: 1px solid #e2e8f5;  /* Light border */
+  border-radius: 16px;        /* Rounded corners */
+  padding: 12px;              /* Inner spacing */
+  box-shadow: 0 12px 30px rgba(15,33,82,.08); /* Soft shadow */
+  min-height: 420px;          /* Minimum height */
 }
 
+/* ============================= */
+/* Drag & drop area */
+/* ============================= */
 .fav__drop{
-  border: 1px dashed #d5dced;
-  border-radius: 14px;
-  padding: 10px;
-  background: #f7f9fd;
+  border: 1px dashed #d5dced; /* Dashed border */
+  border-radius: 14px;       /* Rounded edges */
+  padding: 10px;             /* Inner spacing */
+  background: #f7f9fd;       /* Light background */
 }
 
+/* Drop area when adding items */
 .fav__drop--add{
-  border-color: rgba(14,167,106,.45);
+  border-color: rgba(14,167,106,.45); /* Green border */
 }
-.fav__title{ font-weight: 900; }
-.fav__hint{ color: #7781a1; font-size: 12px; margin-top: 2px; }
 
-.fav__list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
-.fav__empty{ color: #7781a1; font-size: 13px; padding: 6px 2px; }
+/* ============================= */
+/* Title and hint text */
+/* ============================= */
+.fav__title{
+  font-weight: 900;           /* Bold title */
+}
 
+.fav__hint{
+  color: #7781a1;             /* Muted text color */
+  font-size: 12px;            /* Small text */
+  margin-top: 2px;            /* Space above */
+}
+
+/* ============================= */
+/* Favorite items list */
+/* ============================= */
+.fav__list{
+  list-style:none;            /* Remove bullets */
+  padding:0;
+  margin:0;
+  display:flex;               /* Flex layout */
+  flex-direction:column;      /* Vertical list */
+  gap:8px;                    /* Space between items */
+}
+
+/* Text shown when list is empty */
+.fav__empty{
+  color: #7781a1;
+  font-size: 13px;
+  padding: 6px 2px;
+}
+
+/* ============================= */
+/* Single favorite item */
+/* ============================= */
 .fav__item{
-  display:flex;
-  align-items:center;
-  gap:10px;
+  display:flex;               /* Horizontal layout */
+  align-items:center;         /* Center vertically */
+  gap:10px;                   /* Space between elements */
   border: 1px solid #e2e8f5;
   border-radius: 14px;
   padding: 8px;
   background: #f9fbff;
 }
-.fav__thumb{ width: 44px; height: 44px; border-radius: 12px; object-fit: cover; background: #e9edf7; }
-.fav__meta{ flex:1; min-width: 0; }
-.fav__link{ text-decoration:none; font-weight: 800; display:block; white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
-.fav__link:hover{ text-decoration: underline; }
-.fav__small{ color: #7781a1; font-size: 12px; margin-top: 2px; }
 
+/* Thumbnail image */
+.fav__thumb{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;          /* Crop image properly */
+  background: #e9edf7;        /* Placeholder color */
+}
+
+/* Text content area */
+.fav__meta{
+  flex:1;                     /* Take remaining space */
+  min-width: 0;               /* Prevent overflow issues */
+}
+
+/* Item title link */
+.fav__link{
+  text-decoration:none;
+  font-weight: 800;
+  display:block;
+  white-space: nowrap;        /* Single line */
+  overflow:hidden;            /* Hide overflow */
+  text-overflow: ellipsis;    /* Show ... */
+}
+
+/* Hover effect for link */
+.fav__link:hover{
+  text-decoration: underline;
+}
+
+/* Small description text */
+.fav__small{
+  color: #7781a1;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* ============================= */
+/* Delete button */
+/* ============================= */
 .fav__del{
   background: transparent;
   border: 1px solid #d5dced;
   color: #4b5675;
   border-radius: 12px;
-  width: 34px; height: 34px;
-  cursor:pointer;
+  width: 34px;
+  height: 34px;
+  cursor:pointer;             /* Pointer cursor */
 }
 
+/* ============================= */
+/* Remove / trash area */
+/* ============================= */
 .fav__drop--remove{
-  border-color: rgba(255,91,91,.35);
+  border-color: rgba(255,91,91,.35); /* Red border */
   text-align:center;
 }
-.fav__trash{ color: #9a4a4a; font-size: 13px; }
 
-.fav__clear{ width:100%; }
+/* Trash hint text */
+.fav__trash{
+  color: #9a4a4a;
+  font-size: 13px;
+}
 
+/* Clear all button */
+.fav__clear{
+  width:100%;                 /* Full width */
+}
+
+/* ============================= */
+/* Responsive behavior */
+/* ============================= */
 @media (max-width: 1024px){
-  .fav{ position: static; min-height: auto; }
+  .fav{
+    position: static;         /* Disable sticky on small screens */
+    min-height: auto;         /* Remove fixed height */
+  }
 }

@@ -1,41 +1,81 @@
+/* ============================= */
+/* Header container */
+/* ============================= */
 .hdr{
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f5;
-  box-shadow: 0 6px 18px rgba(15,33,82,.06);
+  position: sticky;           /* Keeps header visible while scrolling */
+  top: 0;                     /* Stick to top of the page */
+  z-index: 10;                /* Stay above other content */
+  background: #ffffff;        /* White background */
+  border-bottom: 1px solid #e2e8f5; /* Bottom border */
+  box-shadow: 0 6px 18px rgba(15,33,82,.06); /* Soft shadow */
 }
-.hdr__inner{
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 10px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 14px;
-}
-.hdr__brand{ display:flex; align-items:center; gap:10px; }
-.hdr__logo{
-  width: 36px; height: 36px;
-  border-radius: 12px;
-  background: #e7f6ef;
-  display:grid; place-items:center;
-  border:1px solid rgba(14,167,106,.35);
-}
-.hdr__title{ font-weight: 800; line-height: 1.1; color: #132347; }
-.hdr__sub{ font-size: 12px; color: #6b7594; }
 
-.hdr__nav{ display:flex; gap:10px; }
-.hdr__link{
-  text-decoration:none;
-  padding: 8px 10px;
-  border-radius: 12px;
-  border:1px solid transparent;
-  color: #5b6789;
+/* ============================= */
+/* Inner header layout */
+/* ============================= */
+.hdr__inner{
+  max-width: 1180px;          /* Limit header width */
+  margin: 0 auto;             /* Center horizontally */
+  padding: 10px 18px;         /* Inner spacing */
+  display:flex;               /* Flexbox layout */
+  align-items:center;         /* Vertical alignment */
+  justify-content:space-between; /* Space between brand & nav */
+  gap: 14px;                  /* Space between items */
 }
+
+/* ============================= */
+/* Brand / logo area */
+/* ============================= */
+.hdr__brand{
+  display:flex;               /* Horizontal layout */
+  align-items:center;         /* Center vertically */
+  gap:10px;                   /* Space between logo and text */
+}
+
+/* Logo box */
+.hdr__logo{
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;        /* Rounded corners */
+  background: #e7f6ef;        /* Light green background */
+  display:grid;
+  place-items:center;         /* Center icon inside */
+  border:1px solid rgba(14,167,106,.35); /* Green border */
+}
+
+/* Main title text */
+.hdr__title{
+  font-weight: 800;           /* Bold text */
+  line-height: 1.1;           /* Tight line spacing */
+  color: #132347;             /* Dark blue color */
+}
+
+/* Subtitle text */
+.hdr__sub{
+  font-size: 12px;            /* Small text */
+  color: #6b7594;             /* Muted color */
+}
+
+/* ============================= */
+/* Navigation menu */
+/* ============================= */
+.hdr__nav{
+  display:flex;               /* Horizontal links */
+  gap:10px;                   /* Space between links */
+}
+
+/* Navigation link */
+.hdr__link{
+  text-decoration:none;       /* Remove underline */
+  padding: 8px 10px;          /* Clickable area */
+  border-radius: 12px;        /* Rounded edges */
+  border:1px solid transparent; /* Invisible border (for layout stability) */
+  color: #5b6789;             /* Default text color */
+}
+
+/* Active navigation link */
 .hdr__link.isActive{
-  color: #0ea76a;
-  border-color: rgba(14,167,106,.35);
-  background: rgba(14,167,106,.12);
+  color: #0ea76a;             /* Green text */
+  border-color: rgba(14,167,106,.35); /* Green border */
+  background: rgba(14,167,106,.12);   /* Light green background */
 }

@@ -13,6 +13,11 @@ const NO_FAVOURITES = {
 
 export default function PropertyCard({ property, onDragStart, favourites = NO_FAVOURITES }) {
   const isFav = favourites.has(property.id);
+  const BASE_URL =
+  window.location.hostname === "localhost"
+    ? "" // dev server
+    : "/advanced-client-side-estate-agent/";
+
 
   return (
     <article
@@ -23,7 +28,7 @@ export default function PropertyCard({ property, onDragStart, favourites = NO_FA
     >
       <img
         className="card__img"
-        src={`${import.meta.env.BASE_URL}${property.picture}`}
+        src={`${BASE_URL}${property.picture}`}
         alt={`${property.type} preview`}
       />
       <div className="card__body">

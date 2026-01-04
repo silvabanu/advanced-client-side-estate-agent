@@ -1,10 +1,9 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import propertiesData from "../data/properties.json";
 import SearchForm from "../components/SearchForm";
 import PropertyCard from "../components/PropertyCard";
 import FavouritesPanel from "../components/FavouritesPanel";
 import { filterProperties, extractPostcodeAreas } from "../utils/filterProperties";
-import { useFavourites } from "../state/favourites";
 import "./SearchPage.css";
 
 const DEFAULT_CRITERIA = {
@@ -20,22 +19,26 @@ const DEFAULT_CRITERIA = {
   dateTo: null
 };
 
-export default function SearchPage() {
+const NO_FAVOURITES = {
+  favourites: [],
+  add: () => {},
+  remove: () => {},
+  clear: () => {},
+  has: () => false
+};
+
+export default function SearchPage({ favourites = NO_FAVOURITES }) {
   const all = propertiesData.properties;
-  const fav = useFavourites();
 
   const [criteria, setCriteria] = useState(DEFAULT_CRITERIA);
   const [submittedCriteria, setSubmittedCriteria] = useState(DEFAULT_CRITERIA);
 
-  const postcodeAreas = useMemo(() => extractPostcodeAreas(all), [all]);
-
-  const results = useMemo(() => filterProperties(all, submittedCriteria), [all, submittedCriteria]);
-
-  const propertiesById = useMemo(() => {
-    const map = {};
-    all.forEach((p) => { map[p.id] = p; });
-    return map;
-  }, [all]);
+  const postcodeAreas = extractPostcodeAreas(all);
+  const results = filterProperties(all, submittedCriteria);
+  const propertiesById = {};
+  all.forEach((p) => {
+    propertiesById[p.id] = p;
+  });
 
   function onSearch() {
     setSubmittedCriteria(criteria);
@@ -54,13 +57,13 @@ export default function SearchPage() {
   function onDropAdd(e) {
     e.preventDefault();
     const id = e.dataTransfer.getData("text/plain");
-    if (id) fav.add(id);
+    if (id) favourites.add(id);
   }
 
   function onDropRemove(e) {
     e.preventDefault();
     const id = e.dataTransfer.getData("text/plain");
-    if (id) fav.remove(id);
+    if (id) favourites.remove(id);
   }
 
   return (
@@ -88,12 +91,13 @@ export default function SearchPage() {
 
           <div className="results__grid">
             {results.map((p) => (
-              <PropertyCard key={p.id} property={p} onDragStart={onDragStart} />
+              <PropertyCard key={p.id} property={p} onDragStart={onDragStart} favourites={favourites} />
             ))}
           </div>
         </section>
 
         <FavouritesPanel
+          favourites={favourites}
           propertiesById={propertiesById}
           onDropAdd={onDropAdd}
           onDropRemove={onDropRemove}

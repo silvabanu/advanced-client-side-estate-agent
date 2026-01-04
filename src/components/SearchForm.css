@@ -5,8 +5,8 @@
   gap: 12px;
 }
 .sf__field{
-  background: rgba(255,255,255,.02);
-  border: 1px solid rgba(255,255,255,.12);
+  background: #ffffff;
+  border: 1px solid #e2e8f5;
   border-radius: 16px;
   padding: 10px;
 }
@@ -15,10 +15,10 @@
 .sf__label{ display:block; font-weight: 900; margin-bottom: 8px; }
 
 .sf__range{ display:flex; flex-direction:column; gap: 10px; }
-.sf__rangeText{ color: #b8c3de; font-size: 13px; }
+.sf__rangeText{ color: #6b7594; font-size: 13px; }
 
 .sf__dateRow{ display:flex; gap: 10px; flex-wrap: wrap; }
-.sf__radio{ display:flex; align-items:center; gap: 6px; color: #b8c3de; }
+.sf__radio{ display:flex; align-items:center; gap: 6px; color: #6b7594; }
 
 .sf__datePick{ margin-top: 8px; }
 .sf__dateBetween{ margin-top: 8px; display:flex; gap: 10px; flex-wrap: wrap; }
@@ -26,30 +26,30 @@
 .sf__actions{ margin-top: 12px; display:flex; gap: 10px; }
 
 .rs__control{
-  background: rgba(255,255,255,.02) !important;
-  border-color: rgba(255,255,255,.15) !important;
+  background: #ffffff !important;
+  border-color: #d5dced !important;
   border-radius: 14px !important;
   min-height: 44px !important;
   box-shadow: none !important;
 }
-.rs__single-value, .rs__input-container, .rs__placeholder{ color: #e8eefc !important; }
+.rs__single-value, .rs__input-container, .rs__placeholder{ color: #1d2439 !important; }
 .rs__menu{
-  background: rgba(15,27,51,.95) !important;
-  border: 1px solid rgba(255,255,255,.15) !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f5 !important;
 }
 .rs__option{ cursor:pointer !important; }
-.rs__option--is-focused{ background: rgba(14,167,106,.18) !important; }
-.rs__option--is-selected{ background: rgba(14,167,106,.28) !important; }
+.rs__option--is-focused{ background: rgba(14,167,106,.12) !important; }
+.rs__option--is-selected{ background: rgba(14,167,106,.22) !important; }
 
 .react-datepicker-wrapper input{
   width: 180px;
   padding: 10px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.15);
-  background: rgba(255,255,255,.02);
-  color: #e8eefc;
+  border: 1px solid #d5dced;
+  background: #ffffff;
+  color: #1d2439;
 }
 .react-datepicker{
-  background: rgba(15,27,51,.98);
-  color: #e8eefc;
+  background: #ffffff;
+  color: #1d2439;
 }

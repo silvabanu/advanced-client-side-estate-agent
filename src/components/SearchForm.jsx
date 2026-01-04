@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 import Slider from "rc-slider";
@@ -19,9 +19,7 @@ export default function SearchForm({
   onSearch,
   onReset
 }) {
-  const postcodeOptions = useMemo(() => {
-    return [{ value: "", label: "Any" }, ...postcodeAreas.map((a) => ({ value: a, label: a }))];
-  }, [postcodeAreas]);
+  const postcodeOptions = [{ value: "", label: "Any" }, ...postcodeAreas.map((a) => ({ value: a, label: a }))];
 
   const priceMin = 0;
   const priceMax = 1500000;

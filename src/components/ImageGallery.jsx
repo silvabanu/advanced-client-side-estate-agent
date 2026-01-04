@@ -1,14 +1,15 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ImageGallery.css";
 
 export default function ImageGallery({ propertyId }) {
-  const images = useMemo(() => {
-    // 8 images per property in /public/images
-    return Array.from({ length: 8 }, (_, i) => `/images/${propertyId}pic${i + 1}.jpg`);
-  }, [propertyId]);
-
-  const [active, setActive] = useState(images[0]);
+  const images = Array.from({ length: 8 }, (_, i) => `/images/${propertyId}pic${i + 1}.jpg`);
+  const firstImage = images[0];
+  const [active, setActive] = useState(firstImage);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setActive(firstImage);
+  }, [firstImage]);
 
   return (
     <div className="gal">

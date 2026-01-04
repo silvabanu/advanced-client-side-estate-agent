@@ -7,29 +7,29 @@
 }
 
 .propMeta{
-  color: #b8c3de;
+  color: #6b7594;
   display:flex;
   gap: 8px;
   align-items:center;
   flex-wrap: wrap;
 }
-.price{ color: #e8eefc; font-weight: 900; }
+.price{ color: #1d2439; font-weight: 900; }
 .dot{ opacity:.7; }
 
 .facts{
   margin: 12px 0 0;
   padding-left: 18px;
-  color: #b8c3de;
+  color: #6b7594;
 }
 .tabText p{ white-space: pre-line; line-height: 1.5; }
 
 .tabMedia{
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid #e2e8f5;
   border-radius: 16px;
   overflow:hidden;
-  background: rgba(255,255,255,.02);
+  background: #ffffff;
 }
-.tabMedia img{ width:100%; height: auto; background: rgba(255,255,255,.04); }
+.tabMedia img{ width:100%; height: auto; background: #f0f3fb; }
 .tabMedia iframe{ width:100%; height: 360px; border:0; }
 
 @media (max-width: 1024px){

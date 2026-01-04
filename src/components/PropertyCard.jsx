@@ -1,12 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { sanitizeText } from "../utils/sanitize";
-import { useFavourites } from "../state/favourites";
 import "./PropertyCard.css";
 
-export default function PropertyCard({ property, onDragStart }) {
-  const fav = useFavourites();
-  const isFav = fav.has(property.id);
+const NO_FAVOURITES = {
+  favourites: [],
+  add: () => {},
+  remove: () => {},
+  clear: () => {},
+  has: () => false
+};
+
+export default function PropertyCard({ property, onDragStart, favourites = NO_FAVOURITES }) {
+  const isFav = favourites.has(property.id);
 
   return (
     <article
@@ -28,7 +34,7 @@ export default function PropertyCard({ property, onDragStart }) {
           <Link className="btn" to={`/property/${property.id}`}>View details</Link>
           <button
             className={isFav ? "btn btn--ghost isFav" : "btn btn--ghost"}
-            onClick={() => (isFav ? fav.remove(property.id) : fav.add(property.id))}
+            onClick={() => (isFav ? favourites.remove(property.id) : favourites.add(property.id))}
             aria-pressed={isFav}
             title={isFav ? "Remove from favourites" : "Add to favourites"}
             type="button"

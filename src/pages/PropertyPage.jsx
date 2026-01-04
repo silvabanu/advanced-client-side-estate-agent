@@ -1,17 +1,22 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
 import propertiesData from "../data/properties.json";
 import ImageGallery from "../components/ImageGallery";
 import Tabs from "../components/Tabs";
 import { sanitizeText } from "../utils/sanitize";
-import { useFavourites } from "../state/favourites";
 import "./PropertyPage.css";
 
-export default function PropertyPage() {
-  const { id } = useParams();
-  const fav = useFavourites();
+const NO_FAVOURITES = {
+  favourites: [],
+  add: () => {},
+  remove: () => {},
+  clear: () => {},
+  has: () => false
+};
 
-  const property = useMemo(() => propertiesData.properties.find((p) => p.id === id), [id]);
+export default function PropertyPage({ favourites = NO_FAVOURITES }) {
+  const { id } = useParams();
+  const property = propertiesData.properties.find((p) => p.id === id);
 
   if (!property) {
     return (
@@ -26,7 +31,7 @@ export default function PropertyPage() {
     );
   }
 
-  const isFav = fav.has(property.id);
+  const isFav = favourites.has(property.id);
   const mapQuery = encodeURIComponent(property.location);
 
   const tabs = [
@@ -84,7 +89,7 @@ export default function PropertyPage() {
 
             <button
               className={isFav ? "btn isFav" : "btn"}
-              onClick={() => (isFav ? fav.remove(property.id) : fav.add(property.id))}
+              onClick={() => (isFav ? favourites.remove(property.id) : favourites.add(property.id))}
               type="button"
               aria-pressed={isFav}
             >

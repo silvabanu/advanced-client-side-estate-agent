@@ -1,107 +1,98 @@
-/* ============================= */
 /* Favorite panel container */
-/* ============================= */
 .fav{
-  position: sticky;           /* Sticks to top while scrolling */
-  top: 72px;                  /* Distance from top */
-  align-self: start;          /* Aligns to top in flex/grid */
-  display:flex;               /* Flex layout */
-  flex-direction:column;      /* Stack items vertically */
-  gap: 10px;                  /* Space between items */
-  background: #ffffff;        /* White background */
-  border: 1px solid #e2e8f5;  /* Light border */
-  border-radius: 16px;        /* Rounded corners */
-  padding: 12px;              /* Inner spacing */
-  box-shadow: 0 12px 30px rgba(15,33,82,.08); /* Soft shadow */
-  min-height: 420px;          /* Minimum height */
+  position: sticky;
+  top: 72px;
+  align-self: start;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f5;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 12px 30px rgba(15,33,82,.08);
+  min-height: 420px;
 }
 
-/* ============================= */
-/* Drag & drop area */
-/* ============================= */
+/* Drag and drop container */
 .fav__drop{
-  border: 1px dashed #d5dced; /* Dashed border */
-  border-radius: 14px;       /* Rounded edges */
-  padding: 10px;             /* Inner spacing */
-  background: #f7f9fd;       /* Light background */
+  border: 1px dashed #d5dced;
+  border-radius: 14px;
+  padding: 10px;
+  background: #f7f9fd;
 }
 
-/* Drop area when adding items */
+/* Active add drop state */
 .fav__drop--add{
-  border-color: rgba(14,167,106,.45); /* Green border */
+  border-color: rgba(14,167,106,.45);
 }
 
-/* ============================= */
-/* Title and hint text */
-/* ============================= */
+/* Favorites title */
 .fav__title{
-  font-weight: 900;           /* Bold title */
+  font-weight: 900;
 }
 
+/* Hint text below title */
 .fav__hint{
-  color: #7781a1;             /* Muted text color */
-  font-size: 12px;            /* Small text */
-  margin-top: 2px;            /* Space above */
+  color: #7781a1;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
-/* ============================= */
-/* Favorite items list */
-/* ============================= */
+/* Favorites list container */
 .fav__list{
-  list-style:none;            /* Remove bullets */
+  list-style:none;
   padding:0;
   margin:0;
-  display:flex;               /* Flex layout */
-  flex-direction:column;      /* Vertical list */
-  gap:8px;                    /* Space between items */
+  display:flex;
+  flex-direction:column;
+  gap:8px;
 }
 
-/* Text shown when list is empty */
+/* Empty list message */
 .fav__empty{
   color: #7781a1;
   font-size: 13px;
   padding: 6px 2px;
 }
 
-/* ============================= */
 /* Single favorite item */
-/* ============================= */
 .fav__item{
-  display:flex;               /* Horizontal layout */
-  align-items:center;         /* Center vertically */
-  gap:10px;                   /* Space between elements */
+  display:flex;
+  align-items:center;
+  gap:10px;
   border: 1px solid #e2e8f5;
   border-radius: 14px;
   padding: 8px;
   background: #f9fbff;
 }
 
-/* Thumbnail image */
+/* Favorite item thumbnail */
 .fav__thumb{
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  object-fit: cover;          /* Crop image properly */
-  background: #e9edf7;        /* Placeholder color */
+  object-fit: cover;
+  background: #e9edf7;
 }
 
-/* Text content area */
+/* Text wrapper for item */
 .fav__meta{
-  flex:1;                     /* Take remaining space */
-  min-width: 0;               /* Prevent overflow issues */
+  flex:1;
+  min-width: 0;
 }
 
-/* Item title link */
+/* Favorite item link */
 .fav__link{
   text-decoration:none;
   font-weight: 800;
   display:block;
-  white-space: nowrap;        /* Single line */
-  overflow:hidden;            /* Hide overflow */
-  text-overflow: ellipsis;    /* Show ... */
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 
-/* Hover effect for link */
+/* Hover effect for item link */
 .fav__link:hover{
   text-decoration: underline;
 }
@@ -113,9 +104,7 @@
   margin-top: 2px;
 }
 
-/* ============================= */
 /* Delete button */
-/* ============================= */
 .fav__del{
   background: transparent;
   border: 1px solid #d5dced;
@@ -123,14 +112,12 @@
   border-radius: 12px;
   width: 34px;
   height: 34px;
-  cursor:pointer;             /* Pointer cursor */
+  cursor:pointer;
 }
 
-/* ============================= */
-/* Remove / trash area */
-/* ============================= */
+/* Remove drop area */
 .fav__drop--remove{
-  border-color: rgba(255,91,91,.35); /* Red border */
+  border-color: rgba(255,91,91,.35);
   text-align:center;
 }
 
@@ -142,15 +129,13 @@
 
 /* Clear all button */
 .fav__clear{
-  width:100%;                 /* Full width */
+  width:100%;
 }
 
-/* ============================= */
-/* Responsive behavior */
-/* ============================= */
+/* Responsive styles */
 @media (max-width: 1024px){
   .fav{
-    position: static;         /* Disable sticky on small screens */
-    min-height: auto;         /* Remove fixed height */
+    position: static;
+    min-height: auto;
   }
 }

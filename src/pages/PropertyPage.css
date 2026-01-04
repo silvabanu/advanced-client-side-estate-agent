@@ -1,3 +1,4 @@
+/* Property header layout */
 .propHead{
   display:flex;
   align-items:flex-start;
@@ -6,10 +7,12 @@
   flex-wrap: wrap;
 }
 
+/* Property page inner wrapper */
 .property_page__inner{
   width: 100%;
 }
 
+/* Gallery images fit */
 .gal__main img,
 .gal__thumb img,
 .lightbox__item img {
@@ -19,34 +22,41 @@
   display: block;
 }
 
+/* Main gallery frame */
 .gal__main {
-  width: 100%;            
-  aspect-ratio: 16 / 9;   
-  overflow: hidden;       
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
   display: block;
 }
 
+/* Main gallery image */
 .gal__main img {
   width: 100%;
   height: 100%;
-  object-fit: cover;     
+  object-fit: cover;
   display: block;
 }
 
+/* Gallery thumbnail */
 .gal__thumb {
   width: 100px;
   aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
+/* Lightbox item */
 .lightbox__item {
   aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
+/* Lightbox image */
 .lightbox__item img {
   max-height: 100%;
 }
+
+/* Mobile gallery styles */
 @media (max-width: 768px) {
   .gal__main {
     max-width: 100%;
@@ -58,7 +68,7 @@
   }
 }
 
-
+/* Property meta info */
 .propMeta{
   color: #6b7594;
   display:flex;
@@ -66,25 +76,56 @@
   align-items:center;
   flex-wrap: wrap;
 }
-.price{ color: #1d2439; font-weight: 900; }
-.dot{ opacity:.7; }
 
+/* Price text */
+.price{
+  color: #1d2439;
+  font-weight: 900;
+}
+
+/* Separator dot */
+.dot{
+  opacity:.7;
+}
+
+/* Property facts list */
 .facts{
   margin: 12px 0 0;
   padding-left: 18px;
   color: #6b7594;
 }
-.tabText p{ white-space: pre-line; line-height: 1.5; }
 
+/* Tab text content */
+.tabText p{
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+/* Tab media container */
 .tabMedia{
   border: 1px solid #e2e8f5;
   border-radius: 16px;
   overflow:hidden;
   background: #ffffff;
 }
-.tabMedia img{ width:100%; height: auto; background: #f0f3fb; }
-.tabMedia iframe{ width:100%; height: 360px; border:0; }
 
+/* Tab media image */
+.tabMedia img{
+  width:100%;
+  height: auto;
+  background: #f0f3fb;
+}
+
+/* Tab media iframe */
+.tabMedia iframe{
+  width:100%;
+  height: 360px;
+  border:0;
+}
+
+/* Tablet iframe size */
 @media (max-width: 1024px){
-  .tabMedia iframe{ height: 280px; }
+  .tabMedia iframe{
+    height: 280px;
+  }
 }

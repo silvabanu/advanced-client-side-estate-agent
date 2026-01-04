@@ -1,17 +1,44 @@
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
+/* Global box sizing */
+*{
+  box-sizing:border-box;
+}
+
+/* Full height layout */
+html,body{
+  height:100%;
+}
+
+/* Base body styles */
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   background: #f5f7fb;
   color: #1d2439;
 }
-a{ color:inherit; }
-img{ max-width:100%; display:block; }
 
-.page{ padding: 18px; }
-.page__inner{ max-width: 1180px; margin: 0 auto; }
+/* Default link color */
+a{
+  color:inherit;
+}
 
+/* Responsive images */
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* Page wrapper */
+.page{
+  padding: 18px;
+}
+
+/* Centered page content */
+.page__inner{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Panel container */
 .panel{
   background: #ffffff;
   border:1px solid #e2e8f5;
@@ -20,10 +47,25 @@ img{ max-width:100%; display:block; }
   padding: 16px;
 }
 
-.h1{ font-size: 24px; margin: 0 0 8px; }
-.h2{ font-size: 18px; margin: 0; }
-.muted{ color: #6b7594; margin: 0 0 14px; }
+/* Main heading */
+.h1{
+  font-size: 24px;
+  margin: 0 0 8px;
+}
 
+/* Section heading */
+.h2{
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Muted text */
+.muted{
+  color: #6b7594;
+  margin: 0 0 14px;
+}
+
+/* Primary button */
 .btn{
   background: #0ea76a;
   color:#ffffff;
@@ -33,21 +75,47 @@ img{ max-width:100%; display:block; }
   font-weight: 700;
   cursor: pointer;
 }
-.btn:hover{ filter: brightness(1.03); }
+
+/* Button hover */
+.btn:hover{
+  filter: brightness(1.03);
+}
+
+/* Ghost button */
 .btn--ghost{
   background: #f7f9fd;
   color: #1d2439;
   border: 1px solid #d5dced;
 }
+
+/* Danger button */
 .btn--danger{
   background: #ff5b5b;
   color: #ffffff;
 }
-.link{ color: #3b4a8f; text-decoration: none; }
-.link:hover{ text-decoration: underline; }
 
+/* Text link */
+.link{
+  color: #3b4a8f;
+  text-decoration: none;
+}
+
+/* Link hover */
+.link:hover{
+  text-decoration: underline;
+}
+
+/* Responsive spacing */
 @media (max-width: 1024px){
-  .page{ padding: 12px; }
-  .panel{ padding: 12px; }
-  .h1{ font-size: 22px; }
+  .page{
+    padding: 12px;
+  }
+
+  .panel{
+    padding: 12px;
+  }
+
+  .h1{
+    font-size: 22px;
+  }
 }

@@ -1,4 +1,9 @@
-.tabs{ margin-top: 14px; }
+/* Tabs container */
+.tabs{
+  margin-top: 14px;
+}
+
+/* Tabs header bar */
 .tabs__bar{
   display:flex;
   gap:8px;
@@ -6,6 +11,8 @@
   border-bottom: 1px solid #e2e8f5;
   padding-bottom: 10px;
 }
+
+/* Tab button */
 .tabs__tab{
   background: #f7f9fd;
   color: #4b5675;
@@ -15,11 +22,15 @@
   cursor:pointer;
   font-weight: 800;
 }
+
+/* Active tab */
 .tabs__tab.isActive{
   border-color: rgba(14,167,106,.5);
   background: rgba(14,167,106,.1);
   box-shadow: 0 0 0 3px rgba(14,167,106,.15);
 }
+
+/* Tab content panel */
 .tabs__panel{
   padding-top: 12px;
 }

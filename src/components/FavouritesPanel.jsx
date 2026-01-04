@@ -1,33 +1,40 @@
-// React Router link for navigation
+// React Router link
 import { Link } from "react-router-dom";
 
-// Icons from lucide-react
+// Icons
 import { Star, Trash2, X, Circle } from "lucide-react";
 
 // Component styles
 import "./FavouritesPanel.css";
 
-// Default empty favourites object (prevents crashes if props are missing)
+// Default empty favourites object
 const NO_FAVOURITES = {
-  favourites: [],     // List of favourite IDs
-  add: () => {},      // Add favourite (empty function)
-  remove: () => {},   // Remove favourite
-  clear: () => {},    // Clear all favourites
-  has: () => false    // Check if favourite exists
+  favourites: [],
+  add: () => {},
+  remove: () => {},
+  clear: () => {},
+  has: () => false
 };
 
-// Main Favourites Panel component
+// Favourites panel component
 export default function FavouritesPanel({
-  favourites = NO_FAVOURITES,  // Favourite state & methods
-  propertiesById,              // Property data mapped by ID
-  onDropRemove,                // Drag & drop remove handler
-  onDropAdd                    // Drag & drop add handler
+  favourites = NO_FAVOURITES,
+  propertiesById,
+  onDropRemove,
+  onDropAdd
 }) {
 
-  // Allows items to be dropped by preventing default behavior
+  // Base URL for local and GitHub Pages
+  const BASE_URL =
+    window.location.hostname === "localhost"
+      ? "/"
+      : "/advanced-client-side-estate-agent/";
+
+  // Enable drop action
   function allowDrop(e) {
     e.preventDefault();
   }
+
 
   return (
     <aside className="fav" aria-label="Favourites">
@@ -65,11 +72,7 @@ export default function FavouritesPanel({
             <li key={id} className="fav__item">
               
               {/* Property thumbnail */}
-              <img
-                className="fav__thumb"
-                src={`/${p.picture}`}
-                alt=""
-              />
+              <img className="fav__thumb" src={`${BASE_URL}${p.picture}`} alt="" />
 
               {/* Property details */}
               <div className="fav__meta">

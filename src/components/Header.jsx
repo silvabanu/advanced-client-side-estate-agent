@@ -1,38 +1,34 @@
-// Import Link for navigation and useLocation to detect current route
+// Router tools
 import { Link, useLocation } from "react-router-dom"; 
 
-// Import Home icon from lucide-react
+// Icon
 import { Home } from "lucide-react"; 
 
-// Import header styles
+// Styles
 import "./Header.css"; 
 
-/* ----------------------------------
-   Header Component
------------------------------------ */
+// Header component
 export default function Header() {
 
-  // Get the current URL path (used to highlight active menu link)
+  // Current route path
   const { pathname } = useLocation();
 
   return (
     <header className="hdr">
 
-      {/* Inner container to center and align content */}
+      {/* Header inner layout */}
       <div className="hdr__inner">
 
-        {/* ============================= */}
-        {/* Brand section (logo + title) */}
-        {/* ============================= */}
+        {/* Brand section */}
         <div className="hdr__brand">
 
-          {/* Home icon used as logo */}
+          {/* Logo icon */}
           <Home
             className="hdr__logo"
-            aria-hidden="true"   /* Decorative icon (screen readers ignore it) */
+            aria-hidden="true"
           />
 
-          {/* App name */}
+          {/* App title */}
           <div>
             <div className="hdr__title">
               Estate Agent
@@ -40,14 +36,10 @@ export default function Header() {
           </div>
         </div>
 
-        {/* ============================= */}
-        {/* Navigation section */}
-        {/* ============================= */}
+        {/* Navigation */}
         <nav className="hdr__nav" aria-label="Primary">
 
-          {/* Search link
-              - Adds 'isActive' class when URL starts with /search
-              - Highlights the current page in the menu */}
+          {/* Search link */}
           <Link
             className={
               pathname.startsWith("/search")

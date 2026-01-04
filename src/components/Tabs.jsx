@@ -1,12 +1,22 @@
+// React hooks
 import { useId, useState } from "react";
+
+// Styles
 import "./Tabs.css";
 
+// Tabs component
 export default function Tabs({ tabs }) {
+
+  // Unique base ID
   const baseId = useId();
+
+  // Active tab index
   const [active, setActive] = useState(0);
 
   return (
     <div className="tabs">
+
+      {/* Tab buttons */}
       <div className="tabs__bar" role="tablist" aria-label="Property info tabs">
         {tabs.map((t, idx) => (
           <button
@@ -24,6 +34,7 @@ export default function Tabs({ tabs }) {
         ))}
       </div>
 
+      {/* Tab panels */}
       {tabs.map((t, idx) => (
         <section
           key={t.label}

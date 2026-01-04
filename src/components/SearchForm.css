@@ -1,30 +1,84 @@
-.sf{ margin-top: 12px; }
+/* Search form wrapper */
+.sf{
+  margin-top: 12px;
+}
+
+/* Grid layout for fields */
 .sf__grid{
   display:grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
+
+/* Single form field */
 .sf__field{
   background: #ffffff;
   border: 1px solid #e2e8f5;
   border-radius: 16px;
   padding: 10px;
 }
-.sf__field--wide{ grid-column: 1 / -1; }
 
-.sf__label{ display:block; font-weight: 900; margin-bottom: 8px; }
+/* Full width field */
+.sf__field--wide{
+  grid-column: 1 / -1;
+}
 
-.sf__range{ display:flex; flex-direction:column; gap: 10px; }
-.sf__rangeText{ color: #6b7594; font-size: 13px; }
+/* Field label */
+.sf__label{
+  display:block;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
 
-.sf__dateRow{ display:flex; gap: 10px; flex-wrap: wrap; }
-.sf__radio{ display:flex; align-items:center; gap: 6px; color: #6b7594; }
+/* Range input group */
+.sf__range{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
 
-.sf__datePick{ margin-top: 8px; }
-.sf__dateBetween{ margin-top: 8px; display:flex; gap: 10px; flex-wrap: wrap; }
+/* Range text */
+.sf__rangeText{
+  color: #6b7594;
+  font-size: 13px;
+}
 
-.sf__actions{ margin-top: 12px; display:flex; gap: 10px; }
+/* Date radio row */
+.sf__dateRow{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
+/* Radio option */
+.sf__radio{
+  display:flex;
+  align-items:center;
+  gap: 6px;
+  color: #6b7594;
+}
+
+/* Single date picker */
+.sf__datePick{
+  margin-top: 8px;
+}
+
+/* Date range picker */
+.sf__dateBetween{
+  margin-top: 8px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Action buttons */
+.sf__actions{
+  margin-top: 12px;
+  display:flex;
+  gap: 10px;
+}
+
+/* React Select control */
 .rs__control{
   background: #ffffff !important;
   border-color: #d5dced !important;
@@ -32,15 +86,36 @@
   min-height: 44px !important;
   box-shadow: none !important;
 }
-.rs__single-value, .rs__input-container, .rs__placeholder{ color: #1d2439 !important; }
+
+/* React Select text */
+.rs__single-value,
+.rs__input-container,
+.rs__placeholder{
+  color: #1d2439 !important;
+}
+
+/* React Select dropdown */
 .rs__menu{
   background: #ffffff !important;
   border: 1px solid #e2e8f5 !important;
 }
-.rs__option{ cursor:pointer !important; }
-.rs__option--is-focused{ background: rgba(14,167,106,.12) !important; }
-.rs__option--is-selected{ background: rgba(14,167,106,.22) !important; }
 
+/* React Select option */
+.rs__option{
+  cursor:pointer !important;
+}
+
+/* React Select hover */
+.rs__option--is-focused{
+  background: rgba(14,167,106,.12) !important;
+}
+
+/* React Select selected */
+.rs__option--is-selected{
+  background: rgba(14,167,106,.22) !important;
+}
+
+/* Date picker input */
 .react-datepicker-wrapper input{
   width: 180px;
   padding: 10px 12px;
@@ -49,6 +124,8 @@
   background: #ffffff;
   color: #1d2439;
 }
+
+/* Date picker calendar */
 .react-datepicker{
   background: #ffffff;
   color: #1d2439;

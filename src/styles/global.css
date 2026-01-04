@@ -1,0 +1,54 @@
+/* Simple global styles (no CSS variables) */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background: #0b1220;
+  color: #e8eefc;
+}
+a{ color:inherit; }
+img{ max-width:100%; display:block; }
+
+.page{ padding: 18px; }
+.page__inner{ max-width: 1180px; margin: 0 auto; }
+
+.panel{
+  background: rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+  padding: 16px;
+}
+
+.h1{ font-size: 24px; margin: 0 0 8px; }
+.h2{ font-size: 18px; margin: 0; }
+.muted{ color: #b8c3de; margin: 0 0 14px; }
+
+.btn{
+  background: #0ea76a;
+  color:#062011;
+  border: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:hover{ filter: brightness(1.03); }
+.btn--ghost{
+  background: transparent;
+  color: #e8eefc;
+  border: 1px solid rgba(255,255,255,.12);
+}
+.btn--danger{
+  background: #ff5b5b;
+  color: #2a0606;
+}
+.link{ color: #b8c3de; text-decoration: none; }
+.link:hover{ text-decoration: underline; }
+
+@media (max-width: 1024px){
+  .page{ padding: 12px; }
+  .panel{ padding: 12px; }
+  .h1{ font-size: 22px; }
+}

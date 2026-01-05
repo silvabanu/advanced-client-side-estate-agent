@@ -1,5 +1,13 @@
 # Estate Agent SPA (Client-side)
 
+**GitHub Repository:**  
+https://github.com/silvabanu/advanced-client-side-estate-agent
+
+**Live Demo (GitHub Pages):**  
+https://silvabanu.github.io/advanced-client-side-estate-agent/
+
+---
+
 ## Run
 ```bash
 npm install
